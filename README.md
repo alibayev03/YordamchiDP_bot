@@ -1,7 +1,7 @@
 # 🤖 Asal – Telegram AI Bot
 
 [![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)  
-[![Telegram Bot](https://img.shields.io/badge/Telegram-Bot-blue?logo=telegram)](https://t.me/)  
+[![Telegram Bot](https://img.shields.io/badge/Telegram-Bot-blue?logo=telegram)](https://t.me/YordamchiDP_bot)  
 [![OpenRouter](https://img.shields.io/badge/OpenRouter-GPT--3.5--turbo-orange)](https://openrouter.ai/)  
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)  
 [![Author](https://img.shields.io/badge/Made%20by-@sadullaevich__f-blueviolet?logo=telegram)](https://t.me/sadullaevich_f)
