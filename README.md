@@ -127,7 +127,7 @@ Oct 5, 2025
 
 👤 Создатель
 
-Разработчик: @sadullaevich_f
+Разработчик: https://t.me/sadullaevich_f
 
 🤝 Contributing
 
