@@ -1,100 +1,143 @@
-Telegram AI Bot "Asal"
-Overview
-Multi-language Telegram AI chatbot powered by OpenRouter API (GPT-3.5-turbo). The bot supports Russian, Uzbek, and English languages with conversation history tracking and user analytics.
-Current State
+# 🤖 Asal – Telegram AI Bot
 
-Bot code configured and ready to run
-Dependencies installed (python-telegram-bot, requests)
-SQLite database for user tracking
-Admin user ID set: 293349337
-Workflow configured to run automatically
+[![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)  
+[![Telegram Bot](https://img.shields.io/badge/Telegram-Bot-blue?logo=telegram)](https://t.me/)  
+[![OpenRouter](https://img.shields.io/badge/OpenRouter-GPT--3.5--turbo-orange)](https://openrouter.ai/)  
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)  
+[![Author](https://img.shields.io/badge/Made%20by-@sadullaevich__f-blueviolet?logo=telegram)](https://t.me/sadullaevich_f)
 
-Recent Changes
+Многоязычный Telegram-чатбот на базе **OpenRouter API (GPT-3.5-turbo)**.  
+Поддерживает **русский, узбекский и английский языки**, ведёт историю диалога и собирает аналитику по пользователям.  
 
-Oct 5, 2025: Initial project setup
-Moved bot code to main.py
-Installed Python 3.11 and required packages
-Created .gitignore for Python projects
-Set admin user ID to 293349337
-Configured workflow to run bot
+---
 
+## 🚀 Возможности
 
+- 🌍 **Мультиязычная поддержка**: RU 🇷🇺, UZ 🇺🇿, EN 🇬🇧  
+- 🤝 **AI-чат**: интеграция с GPT-3.5-turbo (OpenRouter API)  
+- 💬 **История сообщений**: сохраняет последние 10 сообщений каждого пользователя  
+- 📊 **Аналитика**: отслеживает уникальных пользователей и дату первого визита  
+- 🔒 **Админ-панель**: доступ к статистике только у администратора  
 
-User Preferences
+---
 
-Admin User ID: 293349337
+## 📂 Архитектура проекта
 
-Project Architecture
-Main Components
+- `main.py` – основной файл бота (хэндлеры и AI-интеграция)  
+- `users.db` – база SQLite для отслеживания пользователей  
+- `.gitignore` – исключает кэш, виртуальные окружения и БД  
 
-main.py: Core bot application with handlers and AI integration
-users.db: SQLite database storing user tracking data
-.gitignore: Excludes cache, virtual environments, and database files
+---
 
-Features
+## 📜 Команды бота
 
-Multi-language Support: Russian (ru), Uzbek (uz), English (en)
-AI Chat: OpenRouter API integration with GPT-3.5-turbo
-Conversation History: Maintains last 10 messages per user
-User Analytics: Tracks unique users and first active date
-Admin Commands: Statistics command for admin only
+- `/start` – выбор языка через inline-клавиатуру  
+- `/help` – помощь на выбранном языке  
+- `/stats` – статистика (только для админа)  
 
-Bot Commands
+---
 
-/start - Language selection with inline keyboard
-/help - Display help message in user's language
-/stats - Show user statistics (admin only)
+## ⚙️ Установка и запуск
 
-Environment Variables Required
+1. **Клонируй репозиторий**  
+   ```bash
+   git clone https://github.com/alibayev03/YordamchiDP_bot.git
+   cd YordamchiDP_bot
 
-TELEGRAM_TOKEN - Bot token from @BotFather
-OPENROUTER_API_KEY - API key from openrouter.ai
-Admin User ID is hardcoded in main.py (currently: 293349337)
+2. Установи зависимости
+pip install -r requirements.txt
+python-telegram-bot==20.7
 
-Installation and Setup
+requests==2.31.0
 
-Clone or Download the Repository:
-Clone this repo or download the files manually.
+3. Создай .env файл (или используй секреты хостинга):
 
-
-Install Dependencies:
-Ensure Python 3.11 is installed.
-Run pip install -r requirements.txt to install python-telegram-bot==20.7 and requests==2.31.0.
-
-
-Configure Environment Variables:
-Create a .env file or use a platform-specific secrets manager (e.g., Replit Secrets):TELEGRAM_TOKEN=your_telegram_bot_token
+TELEGRAM_TOKEN=your_telegram_bot_token
 OPENROUTER_API_KEY=your_openrouter_api_key
+4. ⚠️ Убедись, что TELEGRAM_TOKEN – это токен от BotFather
+(пример: 123456789:ABCdefGHIjklMNOpqrsTUVwxyz),
+а не ключ от OpenRouter.
+
+Запусти бота
+
+python main.py
 
 
-Important: Verify that TELEGRAM_TOKEN is your Telegram bot token (e.g., 123456789:ABCdefGHIjklMNOpqrsTUVwxyz), not the OpenRouter key.
+При первом запуске автоматически создастся база users.db.
+
+☁️ Деплой на Render.com
+
+Ты можешь легко запустить бота на Render
+:
+
+Создай новый Web Service на Render
+
+Подключи свой GitHub-репозиторий
+
+В настройках установи:
+
+Start Command:
+
+python main.py
 
 
-Run the Bot:
-Execute python main.py in your terminal or run via the hosting platform (e.g., Replit).
-The bot will create users.db automatically on first run.
+Environment Variables:
 
+TELEGRAM_TOKEN
 
+OPENROUTER_API_KEY
 
-Important Notes
+Сохрани и перезапусти сервис – бот будет работать 24/7.
 
-The bot requires a valid TELEGRAM_TOKEN to start. Ensure it matches the format 123456789:ABCdefGHIjklMNOpqrsTUVwxyz.
-Current TELEGRAM_TOKEN may contain an incorrect value—double-check it’s your Telegram bot token, not the OpenRouter key.
-The database file (users.db) is created automatically on the first run and stores user tracking data.
+🛠️ Текущий статус
 
-Usage
+✅ Код готов к запуску
 
-Start the bot with /start to select a language (Russian, Uzbek, or English).
-Use /help for assistance in your chosen language.
-Admins (user ID 293349337) can use /stats to view the number of unique users.
+✅ Настроена база SQLite
 
-Troubleshooting
+✅ Установлены зависимости
 
-Bot not starting: Check the console for errors (e.g., invalid token) and verify environment variables.
-No response in Telegram: Ensure the bot is running and the Replit instance is active (use Always On if available).
-Resource limits: If CPU usage exceeds 100 seconds/day on Replit, consider optimizing the code or switching to a platform like PythonAnywhere.
+✅ Admin User ID: 293349337
 
-Contributing
-Feel free to fork this repository, make improvements, and submit pull requests!
-License
-MIT License (or specify your preferred license)
+✅ Workflow настроен
+
+🗓️ Недавние изменения
+
+Oct 5, 2025
+
+Инициализация проекта
+
+Перенос кода в main.py
+
+Установка Python 3.11 + пакетов
+
+Создание .gitignore
+
+Добавлен Admin User ID
+
+Настроен workflow
+
+🔧 Решение проблем
+
+❌ Бот не запускается → проверь консоль и правильность токенов
+
+❌ Нет ответа в Telegram → убедись, что бот работает и хостинг активен
+
+❌ Ограничения Replit → при превышении лимитов CPU использовать Render.com или PythonAnywhere
+
+👤 Создатель
+
+Разработчик: @sadullaevich_f
+
+🤝 Contributing
+
+Форкни репозиторий, улучшай проект и создавай Pull Request.
+
+📄 Лицензия
+
+MIT License (см. LICENSE
+)
+
+🌐 Репозиторий
+
+👉 GitHub – YordamchiDP_bot
